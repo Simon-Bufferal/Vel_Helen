@@ -10,10 +10,11 @@ Gives interpolated GNSS velocity at any point in central and southwestern Greece
 
 To be run in the same directory where "Interp_velo.py" and "Vel_Helen_Reg.csv" are stored.
 
------------------
-
 USAGE: $ python3 Interp_velo.py  <lon>  <lat>
+
 *EX:   $ python3 Interp_velo.py   20.5   36.5
+
+-----------------
 
 To use this data, please cite Bufféral et al. (2026).
 
