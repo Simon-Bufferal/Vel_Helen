@@ -6,7 +6,7 @@ CONTACT: Simon Bufféral  -  simon.bufferal@ens.fr
 
 -----------------
 
-Gives interpolated GNSS velocity at any point in central and southwestern Greece, in mm/yr and in the International Terrestrial Reference Frame.
+Gives interpolated GNSS velocity at any point in central and southwestern Greece, in mm/yr and in the International Terrestrial Reference Frame (ITRF).
 
 To be run in the same directory where "Interp_velo.py" and "Vel_Helen_Reg.csv" are stored.
 
