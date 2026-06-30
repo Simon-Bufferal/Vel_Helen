@@ -1,12 +1,13 @@
 #!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
 # ========================================================================= #
-# Executable cinematique.py - version 1.2 - 25/09/20 - Simon Bufféral       #
-# CONTACT: simon.bufferal@ens.fr                                            #
-# -> Interpolation of Greek Velocity field from Bufféral et al. [2025] 		#
-# REQUIREMENTS: ./Vel_Helen_Reg.csv 										#
-# USAGE:   $ python3 Interp_velo.py  <lon>  <lat> 							#
-# EXAMPLE: $ python3 Interp_velo.py   20.5   36.5 							#
+# Executable cinematique.py - version 1.3 - 26/06/30 - Python 3.14.5        #
+# CONTACT: Simon Bufféral - simon.bufferal@ens.fr                           #
+# -> Interpolation of Greek velocity field, from Bufféral et al. [2026]     #
+# REQUIREMENTS: ./Vel_Helen_Reg.csv                                         #
+# USAGE:   $ python3 Interp_velo.py  <lon>  <lat>                           #
+# EXAMPLE: $ python3 Interp_velo.py   20.5   36.5                           #
+# OUTPUT:    vE / vN [mm/yr] [ITRF]                                         #
 # ========================================================================= #
 
 import pandas as pd
@@ -248,17 +249,9 @@ if __name__ == "__main__":
     try:
         vE, vN = interpolator.interpolate(lon, lat)
 
-        # If both components are NaN: apologize and return no values
-        if np.isnan(vE) and np.isnan(vN):
+        # If components are NaN: apologize and return no values
+        if np.isnan(vE) or np.isnan(vN):
             print("Sorry, interpolation failed: no neighbouring value.\n")
-            sys.exit(0)
-
-        # If one component is NaN, print only the available one (optional but helpful)
-        if np.isnan(vE) and not np.isnan(vN):
-            print(f"\n | vE = unavailable (NaN)\n | vN = {round(vN, 1)} mm/yr\n")
-            sys.exit(0)
-        if np.isnan(vN) and not np.isnan(vE):
-            print(f"\n | vE = {round(vE, 1)} mm/yr\n | vN = unavailable (NaN)\n")
             sys.exit(0)
 
         # Normal case: both components available
