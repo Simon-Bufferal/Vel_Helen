@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
 # ========================================================================= #
-# Executable cinematique.py - version 1.3 - 26/06/30 - Python 3.14.5        #
+# Executable Interp_velo.py - version 1.3 - 26/06/30 - Python 3.14.5        #
 # CONTACT: Simon Bufféral - simon.bufferal@ens.fr                           #
 # -> Interpolation of Greek velocity field, from Bufféral et al. [2026]     #
 # REQUIREMENTS: ./Vel_Helen_Reg.csv                                         #
